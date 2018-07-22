@@ -6,6 +6,7 @@ It has been developed using the next technologies:
 - Support for dependencies: Maven.
 - Respository: Git.
 - Testing: JUnit, Mockito.
+- Code analysis tool: CheckStyle, SpotBugs.
 
 Below you will find the instructions to execute the application after run it.
 
