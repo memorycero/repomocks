@@ -14,7 +14,6 @@ Link1: Representing the view responsible of showing play round screen (View 1).
 http://HOST:PORT/JSF_RPS_Project/faces/PlayView.xhtml
 
 # **View 1**
-
 ![alt text](https://github.com/memorycero/repomocks/blob/master/JSF_RPS_Project/tmp/images/view1.png)
 
 
@@ -22,9 +21,9 @@ Link2: Representing the view responsible of showing global score screen (View 2)
 
 Link: http://HOST:PORT/JSF_RPS_Project/faces/GlobalScore.xhtml
 
+# **View 2**
 ![alt text](https://github.com/memorycero/repomocks/blob/master/JSF_RPS_Project/tmp/images/view2.png)
 
-# **View 2**
 
 **Note**: Replace HOST and PORT values with your own local data.
 
