@@ -3,13 +3,18 @@
  */
 package com.cyclum.task.beans;
 
+import java.io.Serializable;
+
 /**
  * Class which contains global score data.
  * @author Mdraa
  *
  */
-public class GlobalScore {
+public class GlobalScore implements Serializable {
 
+	/** Serial UID */
+	private static final long serialVersionUID = 1L;
+	
 	/** Total rounds. */
 	private Integer totalRounds;
 

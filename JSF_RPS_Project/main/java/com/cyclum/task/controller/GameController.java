@@ -3,6 +3,7 @@
  */
 package com.cyclum.task.controller;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -20,7 +21,10 @@ import com.cyclum.task.beans.GlobalScore;
  * @author Mdraa
  *
  */
-public class GameController {
+public class GameController implements Serializable {
+
+	/** Serial UID */
+	private static final long serialVersionUID = 1L;
 
 	/** Logger */
 	private static final Logger LOGGER = Logger.getLogger(GameController.class.getName());

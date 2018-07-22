@@ -3,6 +3,7 @@
  */
 package com.cyclum.task.beans;
 
+import java.io.Serializable;
 import java.util.Random;
 
 /**
@@ -10,7 +11,10 @@ import java.util.Random;
  * @author Mdraa
  *
  */
-public class GameRound {
+public class GameRound implements Serializable {
+
+	/** Serial UID */
+	private static final long serialVersionUID = 1L;
 
 	/** First player choice. */
 	private GameValues firstPlayerChoice;
