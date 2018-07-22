@@ -5,6 +5,8 @@
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/main/java"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/file/resources"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/test/java"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/resources"/>
         <property name="context-root" value="JSF_RPS_Project"/>
         <property name="java-output-path" value="/JSF_RPS_Project/build/classes"/>
     </wb-module>
