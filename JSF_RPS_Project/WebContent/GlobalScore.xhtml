@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+<head>
+<title><ui:insert name="title">GlobalScore</ui:insert></title>
+<style>
+table th, table td {
+	padding: 5px;
+	text-align: left;
+	font-family: Arial, Verdana, sans-serif;
+	border: 1px solid #000;
+}
+</style>
+</head>
+
+<body>
+	<h:form>
+		<f:loadBundle basename="com.cyclum.task.resources.values" var="msg" />
+		<h1>
+			<h:outputLabel value="#{msg['main.title']}" />
+		</h1>
+		<h2>
+			<h:outputLabel value="#{msg['label.globalScore']}" />
+		</h2>
+		<table>
+			<tr>
+				<th>#{msg['table.globalScore.column1.name']}</th>
+				<th>#{msg['table.globalScore.column2.name']}</th>
+				<th>#{msg['table.globalScore.column3.name']}</th>
+				<th>#{msg['table.globalScore.column4.name']}</th>
+			</tr>
+			<tr>
+				<td>#{gameController.globalScore.totalRounds}</td>
+				<td>#{gameController.globalScore.firstPlayerWins}</td>
+				<td>#{gameController.globalScore.secondPlayerWins}</td>
+				<td>#{gameController.globalScore.totalDraws}</td>
+			</tr>
+		</table>
+	</h:form>
+
+</body>
+</html>

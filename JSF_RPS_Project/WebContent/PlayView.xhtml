@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions">
+<head>
+<title><ui:insert name="title">PlayView</ui:insert></title>
+<style>
+table th, table td {
+	padding: 5px;
+	text-align: left;
+	font-family: Arial, Verdana, sans-serif;
+	border: 1px solid #000;
+}
+
+.button {
+	margin: 5px 5px;
+	text-align: center;
+	text-decoration: none;
+}
+</style>
+</head>
+
+<body>
+	<h:form>
+		<f:loadBundle basename="com.cyclum.task.resources.values" var="msg" />
+		<h1>
+			<h:outputLabel value="#{msg['main.title']}"/>
+		</h1>
+		<h2>
+			<h:outputLabel value="#{msg['label.totalRounds']}: ">#{fn:length(gameController.userRoundsList)}</h:outputLabel>
+		</h2>
+		<h:commandButton value="#{msg['button.playRound']}" action="#{gameController.playRound}" class="button" />
+		<h:commandButton value="#{msg['button.restart']}" action="#{gameController.restart}" class="button"/>
+		<h:dataTable value="#{gameController.userRoundsList}" var="round">
+			<h:column>
+				<!-- column header -->
+				<f:facet name="header">#{msg['table.score.column1.name']}</f:facet>
+				<ui:param name="firstPlayerChoiceKey" value="#{round.firstPlayerChoice}" />
+    				#{msg[firstPlayerChoiceKey]}
+    		</h:column>
+			<h:column>
+				<f:facet name="header">#{msg['table.score.column2.name']}</f:facet>
+				<ui:param name="secondPlayerChoiceKey" value="#{round.secondPlayerChoice}" />
+					#{msg[secondPlayerChoiceKey]}
+    		</h:column>
+			<h:column>
+				<f:facet name="header">#{msg['table.score.column3.name']}</f:facet>
+				<ui:param name="winnerKey" value="#{round.winner}" />
+    				#{msg[winnerKey]}
+    		</h:column>
+		</h:dataTable>
+	</h:form>
+
+</body>
+</html>

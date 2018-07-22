@@ -5,6 +5,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import javax.faces.context.FacesContext;
+
 import com.cyclum.task.beans.GameRound;
 import com.cyclum.task.beans.GlobalScore;
 
@@ -89,7 +91,7 @@ public class GameController {
 	 * @return sessionId
 	 */
 	public String getUserSessionId() {
-		return "asdasdasdasd";
+		return FacesContext.getCurrentInstance().getExternalContext().getSessionId(true);
 	}
 
 }
