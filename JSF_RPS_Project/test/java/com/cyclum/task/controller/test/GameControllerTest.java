@@ -9,6 +9,8 @@ import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+import org.mockito.Mock;
+import org.mockito.Mockito;
 
 import com.cyclum.task.beans.GameRound;
 import com.cyclum.task.beans.GameValues;
@@ -27,13 +29,17 @@ public class GameControllerTest {
 	/** Logger */
 	private static final Logger LOGGER =  Logger.getLogger(GameControllerTest.class.getName());
 	
+	/** SESSION ID */
+	private final String SESSION_ID = "AJHDNUXDIAJDO";
+	
 	/** Game controller. */
-	private GameController controller;
+	@Mock
+	private GameController mockController;
 	
 	
 	@Before
 	public void setUp() throws Exception {
-		controller = new GameController();
+		mockController = Mockito.spy(new GameController());
 	}
 
 	@After
@@ -49,11 +55,13 @@ public class GameControllerTest {
 		LOGGER.log(Level.INFO, "[Init][playRoundTest_01][OK] Playing one round.");
 		try {
 			
+			Mockito.doReturn(SESSION_ID).when(mockController).getUserSessionId();
+			
 			//Playing one round
-			controller.playRound();
+			mockController.playRound();
 			
 			//Getting results.
-			List<GameRound> roundList = controller.getUserRoundsList();
+			List<GameRound> roundList = mockController.getUserRoundsList();
 			
 			//List should contain only one round.
 			Assert.assertEquals(roundList.size(), 1);
@@ -66,13 +74,29 @@ public class GameControllerTest {
 			Assert.assertTrue(round.getSecondPlayerChoice().equals(GameValues.ROCK.name()));
 			
 			//Checking global score
-			checkGlobalScrore(controller);
+			checkGlobalScrore(mockController);
 			
 		} catch(Throwable th) {
 			Assert.fail(th.getMessage());
 		}
 		
 		LOGGER.log(Level.INFO, "[End][playRoundTest_01][OK] Playing one round.");
+	}
+	
+	/**
+	 * Test playRoundTest_02
+	 */
+	@Test
+	public void playRoundTest_02() {
+		LOGGER.log(Level.INFO, "[Init][playRoundTest_02][KO] Playing one round.");
+		try {
+			//An unexpected error throws an exception.
+			Mockito.doThrow(new NullPointerException()).when(mockController).getUserSessionId();
+			mockController.playRound();
+		} catch(Throwable th) {
+			Assert.assertTrue(true);
+		}
+		LOGGER.log(Level.INFO, "[End][playRoundTest_02][KO] Playing one round.");
 	}
 	
 	/**
@@ -83,25 +107,45 @@ public class GameControllerTest {
 		LOGGER.log(Level.INFO, "[Init][restartTest_01][OK] Restarting the game.");
 		try {
 			
+			Mockito.doReturn(SESSION_ID).when(mockController).getUserSessionId();
+			
 			//Playing one round
-			controller.playRound();
+			mockController.playRound();
 			
 			//Restarting the game.
-			controller.restart();
+			mockController.restart();
 			
 			//Getting results.
-			List<GameRound> roundList = controller.getUserRoundsList();
+			List<GameRound> roundList = mockController.getUserRoundsList();
 			
 			//List of actual rounds should be empty.
 			Assert.assertTrue(roundList.isEmpty());
 			
 			//Checking global score. Should be the same as in playRoundTest_01.
-			checkGlobalScrore(controller);
+			checkGlobalScrore(mockController);
 			
 		} catch(Throwable th) {
 			Assert.fail(th.getMessage());
 		}
 		LOGGER.log(Level.INFO, "[End][restartTest_01][OK] Restarting the game.");
+	}
+	
+	/**
+	 * Test restartTest_01()
+	 */
+	@Test
+	public void restartTest_02() {
+		LOGGER.log(Level.INFO, "[Init][restartTest_02][KO] Restarting the game.");
+		
+		try {
+			//An unexpected error throws an exception.
+			Mockito.doThrow(new NullPointerException()).when(mockController).getUserSessionId();
+			mockController.restart();
+		} catch(Throwable th) {
+			Assert.assertTrue(true);
+		}
+		
+		LOGGER.log(Level.INFO, "[End][restartTest_02][KO] Restarting the game.");
 	}
 	
 	/**
