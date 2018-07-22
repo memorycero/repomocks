@@ -9,17 +9,17 @@ To follow the requirements given in the exercise, the project JSF_RPS_Project ha
 
 To start using the application, please make use of the following links:
 
-Link1: Representing the view responsible of showing play round screen (View 1).
+Representing the view responsible of showing play round screen (View 1).
 
-http://HOST:PORT/JSF_RPS_Project/faces/PlayView.xhtml
+Link1: http://HOST:PORT/JSF_RPS_Project/faces/PlayView.xhtml
 
 # **View 1**
 ![alt text](https://github.com/memorycero/repomocks/blob/master/JSF_RPS_Project/tmp/images/view1.png)
 
 
-Link2: Representing the view responsible of showing global score screen (View 2)
+Representing the view responsible of showing global score screen (View 2)
 
-Link: http://HOST:PORT/JSF_RPS_Project/faces/GlobalScore.xhtml
+Link2: http://HOST:PORT/JSF_RPS_Project/faces/GlobalScore.xhtml
 
 # **View 2**
 ![alt text](https://github.com/memorycero/repomocks/blob/master/JSF_RPS_Project/tmp/images/view2.png)
