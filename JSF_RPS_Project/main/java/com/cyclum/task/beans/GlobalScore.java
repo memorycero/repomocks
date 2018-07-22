@@ -1,8 +1,10 @@
+/**
+ * GlobalScore.java 1.0
+ */
 package com.cyclum.task.beans;
 
 /**
  * Class which contains global score data.
- * 
  * @author Mdraa
  *
  */
@@ -10,13 +12,13 @@ public class GlobalScore {
 
 	/** Total rounds. */
 	private Integer totalRounds;
-	
+
 	/** Number of first player wins. */
 	private Integer firstPlayerWins;
-	
+
 	/** Number of second player wins. */
 	private Integer secondPlayerWins;
-	
+
 	/** Number of total draws. */
 	private Integer totalDraws;
 
@@ -30,7 +32,7 @@ public class GlobalScore {
 		this.secondPlayerWins = 0;
 		this.totalDraws = 0;
 	}
-	
+
 	/**
 	 * @return the totalRounds
 	 */
@@ -58,9 +60,10 @@ public class GlobalScore {
 	public Integer getTotalDraws() {
 		return totalDraws;
 	}
-	
+
 	/**
 	 * Method which update global score with a new round.
+	 * @param round GameRound
 	 */
 	public void updateGlobalScore(final GameRound round) {
 
@@ -81,5 +84,5 @@ public class GlobalScore {
 		this.totalRounds++;
 
 	}
-	
+
 }

@@ -1,3 +1,6 @@
+/**
+ * GameController.java 1.0
+ */
 package com.cyclum.task.controller;
 
 import java.util.ArrayList;
@@ -14,7 +17,6 @@ import com.cyclum.task.beans.GlobalScore;
 
 /**
  * Game controller.
- * 
  * @author Mdraa
  *
  */
@@ -40,8 +42,7 @@ public class GameController {
 
 	/**
 	 * Play round method.
-	 * 
-	 * @return
+	 * @return result
 	 */
 	public synchronized String playRound() {
 		try {
@@ -63,7 +64,6 @@ public class GameController {
 
 			// Calculate global score.
 			getGlobalScore().updateGlobalScore(round);
-			
 		} catch (Throwable th) {
 			LOGGER.log(Level.SEVERE, "Error playing a round !!!!");
 		}
@@ -73,6 +73,7 @@ public class GameController {
 
 	/**
 	 * Restart method.
+	 * @return result
 	 */
 	public String restart() {
 		try {
@@ -81,7 +82,7 @@ public class GameController {
 				actRoundsMapBySessionId.get(sessionId).clear();
 			}
 		} catch (Throwable th) {
-			LOGGER.log(Level.SEVERE, "Error restarting the game !!!!");
+			LOGGER.log(Level.SEVERE, "Error restarting the game !");
 		}
 
 		return null;
@@ -103,11 +104,11 @@ public class GameController {
 
 	/**
 	 * return sessionId.
-	 * 
 	 * @return the sessionId
 	 */
 	public String getUserSessionId() {
-		return FacesContext.getCurrentInstance().getExternalContext().getSessionId(true);
+		return FacesContext.getCurrentInstance()
+				.getExternalContext().getSessionId(true);
 	}
 
 }
