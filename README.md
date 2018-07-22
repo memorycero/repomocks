@@ -1,29 +1,30 @@
-The project JSF_RPS_Project fulfill with the task required by the recruitment consultant to probe the candidate knowledge.
+To follow the requirements given in the exercise, the project JSF_RPS_Project had been developed using the following technologies and tools:
 
-It has been developed using the next technologies:
-- IDE: Eclipse Photon.
-- Implementation: JSF 2.2, JavaEE 1.8, Apache Tomcat 9.0.
-- Support for dependencies: Maven.
-- Respository: Git.
-- Testing: JUnit, Mockito.
-- Code analysis tool: CheckStyle, SpotBugs.
+-	IDE: Eclipse Photon.
+-	Implementation: JSF 2.2, JavaEE 1.8, Apache Tomcat 9.0.
+-	Support for dependencies: Maven.
+-	Respository: Git.
+-	Testing: JUnit, Mockito.
+-	Code analysis tool: CheckStyle, SpotBugs.
 
-Below you will find the instructions to execute the application after run it.
+To start using the application, please make use of the following links:
 
-Use the next links to show both views:
+Link1: Representing the view responsible of showing play round screen (View 1).
+
+http://HOST:PORT/JSF_RPS_Project/faces/PlayView.xhtml
 
 # **View 1**
 
 ![alt text](https://github.com/memorycero/repomocks/blob/master/JSF_RPS_Project/tmp/images/view1.png)
 
-Link: http://HOST:PORT/JSF_RPS_Project/faces/PlayView.xhtml
 
-# **View 2**
-
-![alt text](https://github.com/memorycero/repomocks/blob/master/JSF_RPS_Project/tmp/images/view2.png)
+Link2: Representing the view responsible of showing global score screen (View 2)
 
 Link: http://HOST:PORT/JSF_RPS_Project/faces/GlobalScore.xhtml
 
+![alt text](https://github.com/memorycero/repomocks/blob/master/JSF_RPS_Project/tmp/images/view2.png)
+
+# **View 2**
 
 **Note**: Replace HOST and PORT values with your own local data.
 
