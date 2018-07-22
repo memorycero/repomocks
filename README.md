@@ -1,7 +1,7 @@
 The project JSF_RPS_Project fulfill with the task required by the recruitment consultant to probe the candidate knowledge.
 
 It has been developed using next technology:
-- IDE: EClipse Photon.
+- IDE: Eclipse Photon.
 - Implementation: JSF 2.2, JavaEE 1.8, Apache Tomcat 9.0.
 - Support for dependencies: Maven.
 - Respository: Git.
