@@ -10,6 +10,11 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
+import com.cyclum.task.beans.GameRound;
+import com.cyclum.task.beans.GameValues;
+import com.cyclum.task.beans.GlobalScore;
+import com.cyclum.task.controller.GameController;
+
 /**
  * Testing class for GameController.
  * 
@@ -28,7 +33,7 @@ public class GameControllerTest {
 	
 	@Before
 	public void setUp() throws Exception {
-		//do nothing
+		controller = new GameController();
 	}
 
 	@After
