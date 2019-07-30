@@ -1,4 +1,4 @@
-To follow the requirements given in the exercise, the project JSF_RPS_Project had been developed using the following technologies and tools:
+To follow the requirements given in the exercise, the project JSF_RPS_Project has been developed using the following technologies and tools:
 
 -	IDE: Eclipse Photon.
 -	Implementation: JSF 2.2, JavaEE 1.8, Apache Tomcat 9.0.
